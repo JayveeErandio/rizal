@@ -103,7 +103,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
             {/* Generated Portrait Image */}
             <img
-              src="/rizal/src/assets/images/rizal_portrait_1784103429889.jpg"
+              src={`${import.meta.env.BASE_URL}assets/rizal_portrait_1784103429889.jpg`}
               alt="Museum portrait of Dr. José Rizal"
               referrerPolicy="no-referrer"
               className="w-full max-w-sm md:max-w-md h-auto object-cover grayscale-[15%] brightness-[95%] contrast-[105%] transition-all duration-300 group-hover:grayscale-0 shadow-inner rounded-xs"

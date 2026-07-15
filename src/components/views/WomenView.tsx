@@ -94,7 +94,7 @@ export default function WomenView() {
                 id="cameo-oval-frame"
               >
                 <img
-                  src={`/rizal/assets/women/${selectedWoman.name}.jpg`}
+                  src={`${import.meta.env.BASE_URL}assets/women/${selectedWoman.name.toLowerCase()}.jpg`}
                   alt={selectedWoman.name}
                   className="w-full h-full object-cover"
                 />
