@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-display: "Cinzel", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-crimson-50: #fdf2f4;
+  --color-crimson-100: #fbe5e9;
+  --color-crimson-200: #f7ced5;
+  --color-crimson-300: #efa8b4;
+  --color-crimson-400: #e2768a;
+  --color-crimson-500: #cf4763;
+  --color-crimson-600: #b52e4b;
+  --color-crimson-700: #98203a;
+  --color-crimson-800: #801d32;
+  --color-crimson-900: #6d1c2d;
+  --color-crimson-950: #400c16;
+
+  --color-gold-50: #fbf9ec;
+  --color-gold-100: #f4edd0;
+  --color-gold-200: #ebdca1;
+  --color-gold-300: #dec165;
+  --color-gold-400: #d0a439;
+  --color-gold-500: #b8860b;
+  --color-gold-600: #9b6c07;
+  --color-gold-700: #7d5107;
+  --color-gold-800: #65410c;
+  --color-gold-900: #54350f;
+  --color-gold-950: #301c05;
+}
+
+/* Custom Vintage Scholarly Styles */
+@layer utilities {
+  .parchment-bg {
+    background-color: #fcf9f2;
+    background-image: 
+      radial-gradient(rgba(240, 230, 210, 0.4) 1px, transparent 0),
+      radial-gradient(rgba(230, 215, 190, 0.3) 1px, transparent 0);
+    background-size: 8px 8px;
+    background-position: 0 0, 4px 4px;
+  }
+  
+  .parchment-card {
+    background-color: #faf6ee;
+    border: 1px solid #e7dfcc;
+    box-shadow: 0 4px 20px -2px rgba(44, 30, 17, 0.05), inset 0 0 40px rgba(212, 175, 55, 0.02);
+  }
+
+  .scholarly-border-double {
+    border: 3px double #b8860b;
+  }
+
+  .scholarly-border-fine {
+    border: 1px solid #d4af37;
+  }
+
+  .academic-shadow {
+    box-shadow: 0 10px 30px -10px rgba(64, 12, 22, 0.15);
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+}
+
+/* Base custom styles to reinforce the Harvard/Oxford academic identity */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #2c1e11;
+  background-color: #fcf9f2;
+  font-family: var(--font-sans);
+}
+
+/* Styled Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5efeb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5bba8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9b203a;
+}
+

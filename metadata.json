@@ -1,0 +1,6 @@
+{
+  "name": "José Rizal Scholarly Portal",
+  "description": "An elegant, academic digital archive and educational portal dedicated to the life, polymathic works, family history, and lasting legacy of Dr. José Rizal, the national hero of the Philippines.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
