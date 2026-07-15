@@ -27,7 +27,7 @@ export default function Navigation({
     { id: ActivePage.EDUCATION, label: "Education" },
     { id: ActivePage.TRIPS, label: "Trips Abroad" },
     { id: ActivePage.OTHER_SIDE, label: "Polymath" },
-    { id: ActivePage.WOMEN, label: "Muses" },
+    { id: ActivePage.WOMEN, label: "Women" },
     { id: ActivePage.WRITINGS_LEGACY, label: "Writings & Legacy" },
     { id: ActivePage.QUIZ, label: "Scholar's Exam" },
   ];
@@ -102,7 +102,7 @@ export default function Navigation({
                   className="w-6 h-6"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  stroke="#ebdc94"
                   strokeWidth="1.5"
                 >
                   <path
@@ -147,7 +147,7 @@ export default function Navigation({
                   onNavigate(item.id);
                   setMobileMenuOpen(false);
                 }}
-                className={`w-full text-left px-4 py-2.5 rounded-sm font-serif font-bold text-xs tracking-wide border transition-all ${isActive ? "bg-crimson-850 text-gold-100 border-gold-400" : "bg-faf6ee text-crimson-950 border-gold-200/20 hover:bg-gold-100/30"}`}
+                className={`w-full text-left px-4 py-2.5 rounded-sm font-serif font-bold text-xs tracking-wide border transition-all ${isActive ? "bg-crimson-850 text-crimson-500 border-gold-400" : "bg-faf6ee text-crimson-950 border-gold-200/20 hover:bg-gold-100/30"}`}
                 id={`mobile-nav-item-${item.id}`}
               >
                 {item.label}

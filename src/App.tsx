@@ -59,7 +59,7 @@ const RizalSignature = () => (
     viewBox="0 0 400 120"
     className="w-48 h-14 text-crimson-950/85"
     fill="none"
-    stroke="currentColor"
+    stroke="gold"
     strokeWidth="1.6"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -151,10 +151,6 @@ export default function App() {
 
     navigate(path);
 
-    if (soundEnabled) {
-      playTransitionSound();
-    }
-
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -216,13 +212,13 @@ export default function App() {
 
       {/* Prestigious Editorial Footer */}
       <footer
-        className="border-t border-gold-300/40 bg-faf6ee py-10 text-center space-y-4"
+        className="border-t border-gold-300/40 bg-faf6ee bg-crimson-950 py-10 text-center space-y-4"
         id="scaffold-footer"
       >
         <div className="w-24 h-px bg-gold-400 mx-auto" />
 
         <div className="space-y-1">
-          <p className="font-display font-bold text-[10px] tracking-[0.25em] text-crimson-900 uppercase">
+          <p className="font-display font-bold text-[10px] tracking-[0.25em] text-gold-200 uppercase">
             Life & Works of Rizal
           </p>
         </div>
@@ -232,19 +228,19 @@ export default function App() {
         </div>
 
         <div>
-          <p className="font-mono text-[9px] text-amber-900/70 tracking-wider">
+          <p className="font-mono text-[9px] text-gold-200 tracking-wider">
             JOHN OSIAS - LEAD PROJECT
           </p>
-          <p className="font-mono text-[9px] text-amber-900/70 tracking-wider">
+          <p className="font-mono text-[9px] text-gold-200 tracking-wider">
             JAYVEE ERANDIO - PROJECT DEVELOPER
           </p>
-          <p className="font-mono text-[9px] text-amber-900/70 tracking-wider">
+          <p className="font-mono text-[9px] text-gold-200 tracking-wider">
             CHRISTINE GANIAS - DEMONSTRATOR
           </p>
-          <p className="font-mono text-[9px] text-amber-900/70 tracking-wider">
+          <p className="font-mono text-[9px] text-gold-200 tracking-wider">
             ALEX ARENAS - RESEARCHER
           </p>
-          <p className="font-mono text-[9px] text-amber-900/70 tracking-wider">
+          <p className="font-mono text-[9px] text-gold-200 tracking-wider">
             ALISA EBANCUEL - DOCUMENTATION
           </p>
         </div>

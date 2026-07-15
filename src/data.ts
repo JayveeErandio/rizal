@@ -87,11 +87,11 @@ export const familyMembers: FamilyMember[] = [
       "A silent, industrious tenant-farmer from Biñan, Laguna. He was a man of high education who valued independence and labor. Rizal described him as a 'model of fathers' who gave his children standard European education.",
   },
   {
-    name: "Teodora Alonso Realonda",
+    name: "Doña Teodora Alonso",
     relation: "Mother",
     lifeDates: "1826 - 1911",
     description:
-      "A highly educated, refined, and strong-willed woman. She was José's first teacher, teaching him the alphabet, prayers, and reading. She famously read him the fable of the young moth and warned him of the dangers of chasing attractive flames.",
+      "Rizal's mother, was his greatest influence. As his first teacher, she taught him to read and write at a young age, and instilled in him a lifelong love of learning and the value of time. A well-educated and pious woman, she opened his eyes to the world's beauty and its injustices. She was his mentor, critic, and spiritual adviser, teaching him self-reliance, thrift, and generosity. Her own struggles with eye problems also inspired him to study medicine.",
   },
   {
     name: "Paciano Mercado",
@@ -105,63 +105,62 @@ export const familyMembers: FamilyMember[] = [
     relation: "Eldest Sister",
     lifeDates: "1850 - 1913",
     description:
-      "Nicknamed Neneng, she was the eldest of the Rizal siblings. She married Manuel T. Hidalgo of Tanauan, Batangas, and kept extensive affectionate correspondences with her brother during his travels abroad.",
+      "The eldest sister, nicknamed 'Neneng,' who helped support him financially. She married Manuel T. Hidalgo of Tanauan, Batangas, and kept extensive affectionate correspondences with her brother during his travels abroad.",
   },
   {
     name: "Narcisa Rizal",
     relation: "Sister",
     lifeDates: "1852 - 1939",
     description:
-      "Nicknamed Sisa, she helped finance José's studies in Europe by selling her jewelry. She was famous for her incredible memory and could recite all of Rizal's poems.",
+      "Known as a compassionate sister who helped fund his studies. Nicknamed Sisa, she helped finance José's studies in Europe by selling her jewelry. She was famous for her incredible memory and could recite all of Rizal's poems.",
   },
   {
     name: "Olympia Rizal",
     relation: "Sister",
     lifeDates: "1855 - 1887",
     description:
-      "Nicknamed Ypia, she married Silvestre Ubaldo, a telegraph operator. She was the sister Rizal most frequently teased in his early letters for her comedic household observations.",
+      "The sister Rizal loved to tease, she married Pantaleon Quintero. Nicknamed Ypia, she married Silvestre Ubaldo, a telegraph operator. She was the sister Rizal most frequently teased in his early letters for her comedic household observations.",
   },
   {
     name: "Lucia Rizal",
     relation: "Sister",
     lifeDates: "1857 - 1919",
     description:
-      "She married Mariano Herbosa, who died of cholera and was denied a Christian burial by Spanish friars due to his relation to Rizal. This incident intensified Rizal's anti-clerical campaigns.",
+      "Endured much hardship, including her husband being exiled. She married Mariano Herbosa, who died of cholera and was denied a Christian burial by Spanish friars due to his relation to Rizal. This incident intensified Rizal's anti-clerical campaigns.",
   },
   {
     name: "Maria Rizal",
     relation: "Sister",
     lifeDates: "1859 - 1945",
     description:
-      "Nicknamed Biang, she was the sibling with whom Rizal discussed his romantic interests and plans to marry Josephine Bracken when he was in exile.",
+      "His confidante, to whom he confided his desire to marry Josephine Bracken.",
   },
   {
     name: "Concepcion Rizal",
     relation: "Younger Sister",
     lifeDates: "1862 - 1865",
     description:
-      "Nicknamed Concha, she died of sickness at the age of three. Her passing was Rizal's very first sorrow, and he shed tears for her, recalling her loving childhood play.",
+      "Nicknamed 'Concha,' she died at the age of three, becoming Rizal's first profound grief. She died of sickness at the age of three. Her passing was Rizal's very first sorrow, and he shed tears for her, recalling her loving childhood play.",
   },
   {
     name: "Josefa Rizal",
     relation: "Sister",
     lifeDates: "1865 - 1945",
     description:
-      "Nicknamed Panggoy, she was active in the Katipunan, serving as the president of its women's chapter. She protected confidential revolution documents.",
+      "Nicknamed Panggoy, she became a member of the Katipunan after his death and never married. She was active in the Katipunan, serving as the president of its women's chapter. She protected confidential revolution documents.",
   },
   {
     name: "Trinidad Rizal",
     relation: "Sister",
     lifeDates: "1868 - 1951",
-    description:
-      "Nicknamed Trining, she was the custodian of Rizal's final poem, 'Mi Último Adiós', which José hid inside an alcohol cooking burner and handed to her on the eve of his execution.",
+    description: "The custodian of Rizal's famous poem, 'Mi Ultimo Adios'.",
   },
   {
     name: "Soledad Rizal",
     relation: "Youngest Sister",
     lifeDates: "1870 - 1929",
     description:
-      "Nicknamed Choleng, she was the youngest sibling and married Pantaleon Quintero. She was known to be the most active and vivacious of the sisters.",
+      "The youngest sister, who became a teacher and married Pantaleon Quintero",
   },
 ];
 

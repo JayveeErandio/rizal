@@ -205,7 +205,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <button
                   key={ev.year}
                   onClick={() => setSelectedEvent(ev)}
-                  className="flex flex-col items-center min-w-[70px] focus:outline-none transition-all duration-200 group"
+                  className="flex flex-col items-center min-w-[70px] cursor-pointer focus:outline-none transition-all duration-200 group"
                   id={`timeline-node-${ev.year}`}
                 >
                   <span
