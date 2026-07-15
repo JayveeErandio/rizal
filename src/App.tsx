@@ -3,13 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
+import {
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { ActivePage } from "./types";
 import Navigation from "./components/Navigation";
 import PageTransition from "./components/PageTransition";
 import Crest from "./components/Crest";
 
-// Modular View Imports
 import HomeView from "./components/views/HomeView";
 import ContextView from "./components/views/ContextView";
 import FamilyView from "./components/views/FamilyView";
@@ -20,6 +26,32 @@ import OtherSideView from "./components/views/OtherSideView";
 import WomenView from "./components/views/WomenView";
 import WritingsView from "./components/views/WritingsView";
 import QuizView from "./components/views/QuizView";
+
+const pageToPath: Record<ActivePage, string> = {
+  [ActivePage.HOME]: "/",
+  [ActivePage.CENTURY_CONTEXT]: "/context",
+  [ActivePage.FAMILY]: "/family",
+  [ActivePage.CHILDHOOD]: "/childhood",
+  [ActivePage.EDUCATION]: "/education",
+  [ActivePage.TRIPS]: "/trips",
+  [ActivePage.OTHER_SIDE]: "/other-side",
+  [ActivePage.WOMEN]: "/women",
+  [ActivePage.WRITINGS_LEGACY]: "/writings",
+  [ActivePage.QUIZ]: "/quiz",
+};
+
+const pathToPage: Record<string, ActivePage> = {
+  "/": ActivePage.HOME,
+  "/context": ActivePage.CENTURY_CONTEXT,
+  "/family": ActivePage.FAMILY,
+  "/childhood": ActivePage.CHILDHOOD,
+  "/education": ActivePage.EDUCATION,
+  "/trips": ActivePage.TRIPS,
+  "/other-side": ActivePage.OTHER_SIDE,
+  "/women": ActivePage.WOMEN,
+  "/writings": ActivePage.WRITINGS_LEGACY,
+  "/quiz": ActivePage.QUIZ,
+};
 
 // Digital hand-drawn vector signature of José Rizal
 const RizalSignature = () => (
@@ -43,8 +75,10 @@ const RizalSignature = () => (
 );
 
 export default function App() {
-  const [activePage, setActivePage] = useState<ActivePage>(ActivePage.HOME);
-  const [soundEnabled, setSoundEnabled] = useState<boolean>(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const activePage = pathToPage[location.pathname] ?? ActivePage.HOME;
   const audioCtxRef = useRef<AudioContext | null>(null);
 
   // Auditory clock ticking and celestial chime synthesizer
@@ -111,13 +145,20 @@ export default function App() {
   };
 
   const handleNavigation = (page: ActivePage) => {
-    if (page === activePage) return;
-    setActivePage(page);
+    const path = pageToPath[page];
+
+    if (location.pathname === path) return;
+
+    navigate(path);
+
     if (soundEnabled) {
       playTransitionSound();
     }
-    // Scroll smoothly to top of main area
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const renderActiveView = () => {
