@@ -13,7 +13,7 @@ export enum ActivePage {
   OTHER_SIDE = "other_side",
   WOMEN = "women",
   WRITINGS_LEGACY = "writings_legacy",
-  QUIZ = "quiz"
+  QUIZ = "quiz",
 }
 
 export interface TimelineEvent {
@@ -32,6 +32,7 @@ export interface FamilyMember {
 
 export interface Masterpiece {
   title: string;
+
   category: "Music" | "Science" | "Art" | "Education";
   year: string;
   description: string;
@@ -48,6 +49,7 @@ export interface WomenInLife {
 
 export interface WritingItem {
   title: string;
+  translation: string;
   type: "Novel" | "Poem" | "Essay";
   yearPublished: string;
   location: string;

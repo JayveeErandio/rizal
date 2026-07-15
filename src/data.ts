@@ -291,15 +291,17 @@ export const writings: WritingItem[] = [
   {
     title: "Noli Me Tangere",
     type: "Novel",
+    translation: "Touch Me Not",
     yearPublished: "1887",
     location: "Berlin, Germany",
     synopsis:
-      "The story follows Juan Crisostomo Ibarra, a young Filipino who returns from Europe to reform his homeland, only to be crushed by the corrupt and abusive colonial friars, particularly Father Damaso. It exposes the cancerous decay of Spanish ecclesiastical rule.",
+      "Published in Berlin in 1887, this novel is a satirical expose of the social ills, colonial oppression, and corruption within the Spanish clergy and government in the Philippines. It is seen as a 'triumph in satire' and gave Filipino readers a powerful mirror with which to view their own society.",
     significance:
       "Stirred the national consciousness by depicting real-world oppression. It was banned by the Spanish government, making it a underground revolutionary catalyst.",
   },
   {
     title: "El Filibusterismo",
+    translation: "The Reign of Greed",
     type: "Novel",
     yearPublished: "1891",
     location: "Ghent, Belgium",
@@ -310,6 +312,7 @@ export const writings: WritingItem[] = [
   },
   {
     title: "Mi Último Adiós (My Last Farewell)",
+    translation: "My Last Farewell",
     type: "Poem",
     yearPublished: "1896",
     location: "Fort Santiago, Manila",
@@ -317,26 +320,6 @@ export const writings: WritingItem[] = [
       "A 14-stanza masterpiece written in flawless Spanish on the eve of his execution. It is a passionate love letter to his motherland, expressing peace with death and an absolute belief that his blood will rise to water the seeds of freedom.",
     significance:
       "Smuggled out in an oil burner, it was translated into dozens of languages. It was recited in the US Congress to advocate for Philippine autonomy.",
-  },
-  {
-    title: "A La Juventud Filipina (To the Filipino Youth)",
-    type: "Poem",
-    yearPublished: "1879",
-    location: "Manila, Philippines",
-    synopsis:
-      "Written when Rizal was 18 years old for a literary competition. It urges the Filipino youth to rise from apathy, cultivate their talents, and break their chains. He famously calls the youth 'The fair hope of my Fatherland' (La bella esperanza de la Patria mía).",
-    significance:
-      "First public declaration by a native Filipino referring to the Philippines, rather than Spain, as the 'Fatherland'.",
-  },
-  {
-    title: "The Indolence of the Filipinos",
-    type: "Essay",
-    yearPublished: "1890",
-    location: "Madrid, Spain",
-    synopsis:
-      "An in-depth socio-historical analysis explaining that the alleged laziness of Filipinos under Spanish rule was not inherent, but a direct consequence of colonial abuse, forced labor, high taxes, and a lack of national incentive.",
-    significance:
-      "A pioneering piece of sociological work defending the dignity and capability of the native population.",
   },
 ];
 
