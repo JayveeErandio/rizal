@@ -21,7 +21,6 @@ import HomeView from "./components/views/HomeView";
 import ContextView from "./components/views/ContextView";
 import EarlyLifeView from "./components/views/EarlyLifeView";
 import EducationView from "./components/views/EducationView";
-import TripsView from "./components/views/TripsView";
 import OtherSideView from "./components/views/OtherSideView";
 import WomenView from "./components/views/WomenView";
 import WritingsView from "./components/views/WritingsView";
@@ -32,7 +31,7 @@ const pageToPath: Record<ActivePage, string> = {
   [ActivePage.CENTURY_CONTEXT]: "/context",
   [ActivePage.EARLY_LIFE]: "/early-life",
   [ActivePage.EDUCATION]: "/education",
-  [ActivePage.TRIPS]: "/trips",
+  [ActivePage.TRIPS]: "/education",
   [ActivePage.OTHER_SIDE]: "/other-side",
   [ActivePage.WOMEN]: "/women",
   [ActivePage.WRITINGS_LEGACY]: "/writings",
@@ -44,7 +43,7 @@ const pathToPage: Record<string, ActivePage> = {
   "/context": ActivePage.CENTURY_CONTEXT,
   "/early-life": ActivePage.EARLY_LIFE,
   "/education": ActivePage.EDUCATION,
-  "/trips": ActivePage.TRIPS,
+  "/trips": ActivePage.EDUCATION,
   "/other-side": ActivePage.OTHER_SIDE,
   "/women": ActivePage.WOMEN,
   "/writings": ActivePage.WRITINGS_LEGACY,
@@ -104,7 +103,7 @@ export default function App() {
       case ActivePage.EDUCATION:
         return <EducationView />;
       case ActivePage.TRIPS:
-        return <TripsView />;
+        return <EducationView />;
       case ActivePage.OTHER_SIDE:
         return <OtherSideView />;
       case ActivePage.WOMEN:

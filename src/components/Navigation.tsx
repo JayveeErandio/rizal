@@ -6,8 +6,6 @@
 import React, { useState } from "react";
 import { ActivePage } from "../types";
 import Crest from "./Crest";
-import logo from "../../assets/logo.png";
-
 interface NavigationProps {
   activePage: ActivePage;
   onNavigate: (page: ActivePage) => void;
@@ -23,8 +21,7 @@ export default function Navigation({
     { id: ActivePage.HOME, label: "Home" },
     { id: ActivePage.CENTURY_CONTEXT, label: "Context & Law" },
     { id: ActivePage.EARLY_LIFE, label: "Early Life" },
-    { id: ActivePage.EDUCATION, label: "Education" },
-    { id: ActivePage.TRIPS, label: "Trips Abroad" },
+    { id: ActivePage.EDUCATION, label: "Education & Travels" },
     { id: ActivePage.OTHER_SIDE, label: "Polymath" },
     { id: ActivePage.WOMEN, label: "Muses" },
     { id: ActivePage.WRITINGS_LEGACY, label: "Writings & Legacy" },
@@ -61,7 +58,7 @@ export default function Navigation({
             className="flex items-center gap-3 cursor-pointer select-none group"
             id="nav-logo-group"
           >
-            <img src={logo} width={50} />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} width={50} />
             <div className="flex flex-col">
               <span className="font-display text-gold-200 font-bold text-[14px] md:text-[16px] tracking-widest leading-none">
                 THE RIZAL
