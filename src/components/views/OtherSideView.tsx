@@ -4,14 +4,108 @@
  */
 
 import React, { useState } from "react";
-import { masterpieces } from "../../data";
-import { Masterpiece } from "../../types";
 import ParchmentCard from "../ParchmentCard";
+import {
+  Music,
+  Microscope,
+  Paintbrush,
+  GraduationCap,
+  Eye,
+  Search,
+  Music4,
+  Sparkles,
+  Heart,
+  Award,
+  BookOpen,
+} from "lucide-react";
+
+type PolymathRole = "musician" | "scientist" | "painter" | "teacher";
 
 export default function OtherSideView() {
-  const [selectedMasterpiece, setSelectedMasterpiece] = useState<Masterpiece>(
-    masterpieces[0],
-  );
+  const [activeRole, setActiveRole] = useState<PolymathRole>("scientist");
+
+  const polymathData = {
+    musician: {
+      title: "As a Musician",
+      subtitle: "The Harmony of Determination",
+      icon: <Music className="w-5 h-5" />,
+      tagline: "Mastering pitch and melody through sheer willpower.",
+      mainText:
+        "Though he lacked natural talent and initially struggled with pitch, Rizal’s determination pushed him to master instruments and study solfeggio, voice culture, and the piano.",
+      subRoles: [
+        {
+          label: "Flutist",
+          desc: "He learned to play the flute.",
+          icon: <Music4 className="w-4 h-4 text-crimson-850" />,
+        },
+        {
+          label: "Composer",
+          desc: 'He composed patriotic and love songs, most notably "Alin Mang Lahi" (Any Race) and "Kundiman ni Rizal".',
+          icon: <Sparkles className="w-4 h-4 text-crimson-850" />,
+        },
+      ],
+    },
+    scientist: {
+      title: "As a Scientist",
+      subtitle: "Naturalist & Healer of the Mind",
+      icon: <Microscope className="w-5 h-5" />,
+      tagline: "Refuting colonial prejudice through empirical truth.",
+      mainText:
+        "Rizal was a passionate naturalist and doctor who utilized the scientific method to heal, discover, and refute colonial prejudices regarding Filipino intellect.",
+      subRoles: [
+        {
+          label: "Taxonomist",
+          desc: "During his exile in Dapitan, he collected over 340 shells and countless flora and fauna. Three animal species discovered by him were named in his honor: the Draco rizali (flying lizard), Apogonia rizali (beetle), and Rhacophorus rizali (frog).",
+          icon: <Search className="w-4 h-4 text-crimson-850" />,
+        },
+        {
+          label: "Physician",
+          desc: "He was a skilled ophthalmologist who performed surgeries to restore sight.",
+          icon: <Eye className="w-4 h-4 text-crimson-850" />,
+        },
+      ],
+    },
+    painter: {
+      title: "As a Painter & Sculptor",
+      subtitle: "Aesthetic Eyes & Trained Hands",
+      icon: <Paintbrush className="w-5 h-5" />,
+      tagline: "Capturing love, sorrow, and national triumph.",
+      mainText:
+        "Rizal was a trained artist. He studied drawing and painting at the prestigious Academia de Dibujo y Pintura in Manila and further honed his craft in Europe.",
+      subRoles: [
+        {
+          label: "Notable Works",
+          desc: "He created over 110 known works, including portraits of his family and loves (like Leonor Rivera), allegorical paintings, and sketches documenting his travels.",
+          icon: <Heart className="w-4 h-4 text-crimson-850" />,
+        },
+        {
+          label: "Sculptor",
+          desc: 'He also sculpted notable pieces like "The Triumph of Science Over Death".',
+          icon: <Award className="w-4 h-4 text-crimson-850" />,
+        },
+      ],
+    },
+    teacher: {
+      title: "As a Teacher",
+      subtitle: "Liberator Through Practical Knowledge",
+      icon: <GraduationCap className="w-5 h-5" />,
+      tagline: "Empowering the next generation to raise the nation.",
+      mainText:
+        "Rizal viewed education as the key to the nation's liberation. During his Dapitan exile, he ran a free school for local boys, housing and educating them at his own expense.",
+      subRoles: [
+        {
+          label: "Curriculum",
+          desc: "Instead of charging tuition, he had his students work in his garden and on community projects. He taught languages, geography, history, mathematics, and morals.",
+          icon: <BookOpen className="w-4 h-4 text-crimson-850" />,
+        },
+        {
+          label: "Holistic Education",
+          desc: "He incorporated physical training (gymnastics, wrestling) and real-world science through nature walks and community service.",
+          icon: <Sparkles className="w-4 h-4 text-crimson-850" />,
+        },
+      ],
+    },
+  };
 
   return (
     <div className="space-y-12 animate-fade-in" id="otherside-view-container">
@@ -24,7 +118,7 @@ export default function OtherSideView() {
           src={`${import.meta.env.BASE_URL}assets/dapitan_exile_1784103480107.jpg`}
           alt="Dapitan Exile, Coastal cottage scenery"
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover filter sepia-[15%] brightness-[85%]"
+          className="w-full h-full object-cover filter sepia-[15%] brightness-[80%] contrast-[105%]"
           id="otherside-banner-image"
         />
         <div
@@ -35,253 +129,140 @@ export default function OtherSideView() {
             SECTION II • THE POLYMATH OF DAPITAN
           </span>
           <h1 className="font-serif text-3xl md:text-5xl font-extrabold text-gold-100 tracking-tight">
-            The Other Side of Rizal
+            The Polymath: Many-Sided Genius
           </h1>
           <p className="font-serif italic text-xs md:text-sm text-gold-300/80 mt-1">
-            Exploring his works as a scientist, composer, sculptor, and civic
-            engineer during exile.
+            "We must prove that we have our own intellect, our own art, and our
+            own science."
           </p>
         </div>
       </div>
 
-      {/* Narrative Section */}
+      {/* Narrative Intro */}
+      <div
+        className="text-center max-w-2xl mx-auto space-y-3"
+        id="otherside-narrative"
+      >
+        <span className="font-display text-gold-600 text-[10px] tracking-widest font-bold block uppercase">
+          RENAISSANCE SPIRIT
+        </span>
+        <h2 className="font-serif text-2xl md:text-3xl font-extrabold text-crimson-950">
+          The Intellect Beyond Letters
+        </h2>
+        <p className="text-sm text-amber-950/80 leading-relaxed text-justify md:text-center">
+          Dr. José Rizal’s contributions were not limited to reformist
+          literature. He was a true polymath—confronting Spanish colonial
+          assumptions by mastering music, performing advanced scientific work,
+          producing classic fine arts, and implementing radical education
+          models.
+        </p>
+        <div className="w-16 h-0.5 bg-crimson-700 mx-auto mt-2" />
+      </div>
+
+      {/* Interactive Polymath Selector & Card Display */}
       <div
         className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
-        id="otherside-introduction"
+        id="polymath-explorer-grid"
       >
-        <div className="lg:col-span-7 space-y-5" id="polymath-narrative">
-          <div className="space-y-2">
-            <span className="font-display text-gold-600 text-xs font-bold tracking-widest block uppercase">
-              The Polymath Concept
-            </span>
-            <h2 className="font-serif text-2xl md:text-3xl font-extrabold text-crimson-950">
-              A Renaissance Mind in the Orient
-            </h2>
-            <div className="w-12 h-0.5 bg-crimson-700" />
-          </div>
-
-          <p className="text-sm text-amber-950/80 leading-relaxed text-justify">
-            What separates José Rizal from standard national revolutionaries is
-            the shear depth of his polymathic genius. Exile in Dapitan from 1892
-            to 1896, intended to stifle his revolutionary voice, instead became
-            his greatest testing ground.
-          </p>
-          <p className="text-sm text-amber-950/80 leading-relaxed text-justify">
-            Rather than wallowing in isolation, he established a clinic,
-            conducted advanced botanical research, sculpted, painted, composed,
-            founded a school for local boys, and engineered a municipal water
-            pipeline. He demonstrated that civic development and scientific
-            education are the true pillars of national self-determination.
-          </p>
-
-          <div
-            className="grid grid-cols-2 gap-4 pt-2"
-            id="otherside-summary-cards"
-          >
-            <div className="p-4 border border-gold-300/30 bg-faf6ee rounded-xs space-y-1">
-              <span className="font-display text-[9px] font-bold text-crimson-900 block uppercase">
-                AS A TEACHER
-              </span>
-              <p className="text-xs text-amber-950/75 leading-relaxed">
-                Rizal taught local boys English, Spanish, geometry, algebra, and
-                vocational carpentry without tuition, asking only that they work
-                in his agricultural gardens.
-              </p>
-            </div>
-            <div className="p-4 border border-gold-300/30 bg-faf6ee rounded-xs space-y-1">
-              <span className="font-display text-[9px] font-bold text-crimson-900 block uppercase">
-                AS AN ENGINEER
-              </span>
-              <p className="text-xs text-amber-950/75 leading-relaxed">
-                Rizal designed and created a gravity-fed water line utilizing
-                hollow bamboo and clay to filter mountain spring water,
-                eliminating cholera from the coastal settlement.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Quick Facts Sidebar */}
-        <div className="lg:col-span-5" id="otherside-quote-card">
-          <ParchmentCard
-            title="The Triumph of Reason"
-            subtitle="Scientific Renaissance"
-            headerBadge="MUSEUM SUMMARY"
-            doubleBorder
-            ornament={false}
-          >
-            <div className="space-y-3 text-xs md:text-sm text-amber-950/90 leading-relaxed">
-              <p className="font-serif italic text-crimson-950">
-                "Science is the only true light. It exposes the shadows of
-                superstition, breaks the chains of blind dogmatism, and restores
-                the sovereign dignity of humanity."
-              </p>
-              <p>
-                Rizal corresponded with top European minds like Professor
-                Ferdinand Blumentritt, Rudolf Virchow, and Adolf Meyer, sending
-                them detailed botanical and geological samples. This proved that
-                native Filipino intelligence was equal to any in Europe.
-              </p>
-            </div>
-          </ParchmentCard>
-        </div>
-      </div>
-
-      {/* Interactive Masterpieces Catalogue with Wireframe Placeholders */}
-      <div
-        className="space-y-6 pt-6 border-t border-gold-300/30"
-        id="masterpieces-exhibition"
-      >
-        <div className="text-center">
-          <h2 className="font-serif text-2xl font-bold text-crimson-950">
-            Compendium of Masterpieces
-          </h2>
-          <p className="text-xs text-amber-900/75 italic mt-1">
-            Inspect the visual blueprint and wireframe schematic of Rizal’s
-            non-literary creations.
-          </p>
-        </div>
-
-        <div
-          className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start"
-          id="masterpieces-grid"
-        >
-          {/* Left: Masterpiece Selector Buttons */}
-          <div
-            className="md:col-span-4 flex flex-col gap-2.5"
-            id="masterpiece-buttons"
-          >
-            {masterpieces.map((m) => {
-              const isSelected = selectedMasterpiece.title === m.title;
-              return (
-                <button
-                  key={m.title}
-                  onClick={() => setSelectedMasterpiece(m)}
-                  className={`p-4 rounded-xs border text-left cursor-pointer transition-all duration-300 ${isSelected ? "bg-crimson-950 text-gold-100 border-gold-500 scale-[1.01] shadow-md" : "bg-faf6ee text-amber-950 border-gold-300/40 hover:bg-gold-100/30"}`}
-                  id={`master-btn-${m.title.replace(/\s+/g, "-").toLowerCase()}`}
-                >
-                  <span className="font-mono text-[8px] font-bold tracking-widest text-gold-500 uppercase block">
-                    {m.category} • Year {m.year}
-                  </span>
-                  <h3 className="font-serif font-extrabold text-[12px] md:text-[13px] leading-tight mt-1.5">
-                    {m.title}
-                  </h3>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Right: Masterpiece Visual Wireframe Panel & Description */}
-          <div className="md:col-span-8" id="masterpiece-detail-viewer">
-            <div
-              className="parchment-card p-6 md:p-8 rounded-sm border border-gold-400 relative overflow-hidden space-y-6"
-              id="masterpiece-card-inner"
-            >
-              <div className="absolute inset-2 border border-dashed border-gold-600/15 rounded-xs pointer-events-none" />
-
-              {/* Wireframe Graphic Placeholder requested by User */}
-              <div
-                className="border border-double border-gold-500 bg-gold-50/40 p-4 rounded-xs relative flex flex-col items-center justify-center min-h-[180px]"
-                id="wireframe-graphic-container"
+        {/* Left: Interactive Navigation */}
+        <div className="lg:col-span-4 flex flex-col gap-3" id="polymath-nav">
+          {(Object.keys(polymathData) as PolymathRole[]).map((key) => {
+            const isSelected = activeRole === key;
+            const data = polymathData[key];
+            return (
+              <button
+                key={key}
+                onClick={() => setActiveRole(key)}
+                className={`p-4 rounded-sm border text-left cursor-pointer transition-all duration-300 flex items-center gap-4 ${
+                  isSelected
+                    ? "bg-crimson-950 text-gold-100 border-gold-400 scale-[1.02] shadow-md"
+                    : "bg-faf6ee text-amber-950 border-gold-300/40 hover:bg-gold-100/30"
+                }`}
+                id={`polymath-btn-${key}`}
               >
-                {/* Blueprint watermark lines */}
-                <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-                <div className="absolute top-2 left-2 font-mono text-[7px] text-gold-700/60 uppercase">
-                  WIREFRAME SCHEMATIC • {selectedMasterpiece.category}
-                </div>
-                <div className="absolute bottom-2 right-2 font-mono text-[7px] text-gold-700/60 uppercase">
-                  REFERENCE NO: RZL-{selectedMasterpiece.year}
-                </div>
-
-                <div
-                  className="text-center max-w-md p-4 relative z-10 space-y-3"
-                  id="wireframe-text"
+                <span
+                  className={`p-2.5 rounded-sm ${isSelected ? "bg-crimson-900 text-gold-200" : "bg-gold-100 text-crimson-950"}`}
                 >
-                  <span
-                    className="inline-block p-2 rounded-full bg-crimson-50 text-crimson-850"
-                    id="wireframe-icon"
+                  {data.icon}
+                </span>
+                <div className="space-y-0.5">
+                  <h3 className="font-serif font-extrabold text-sm leading-tight">
+                    {data.title}
+                  </h3>
+                  <p
+                    className={`text-[11px] font-serif italic ${isSelected ? "text-gold-300/85" : "text-amber-950/60"}`}
                   >
-                    {selectedMasterpiece.category === "Art" && (
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9.53 16.122l.18 2.398a1.125 1.125 0 001.941.645l2.42-2.42M13.75 3h.008v.008h-.008V3zm0 3h.008v.008h-.008V6zm0 3h.008v.008h-.008V9m0 6h.008v.008h-.008V15m0 3h.008v.008h-.008V18zm3-12h.008v.008h-.008V6zm0 3h.008v.008h-.008V9m0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008V15m-9-6h.008v.008h-.008V9m0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008V15m-3-6h.008v.008h-.008V9m0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008V15"
-                        />
-                      </svg>
-                    )}
-                    {selectedMasterpiece.category === "Music" && (
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9 9l10.5-3m0 0v15m0-15l-10.5 3m0 0v15m0-15l10.5-3m-10.5 3l10.5-3"
-                        />
-                      </svg>
-                    )}
-                    {selectedMasterpiece.category === "Science" && (
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    )}
-                    {selectedMasterpiece.category === "Education" && (
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 21a9.003 9.003 0 008.354-5.646 9.003 9.003 0 00-11.232-11.232 9.003 9.003 0 00-5.646 8.354A9 9 0 0012 21z"
-                        />
-                      </svg>
-                    )}
-                  </span>
-                  <p className="font-serif italic text-xs font-medium text-crimson-900">
-                    {selectedMasterpiece.mediaPlaceholder}
+                    {data.subtitle}
                   </p>
                 </div>
-              </div>
+              </button>
+            );
+          })}
+        </div>
 
-              {/* Masterpiece Description Text */}
-              <div className="space-y-2" id="masterpiece-meta-panel">
-                <div className="flex justify-between items-baseline border-b border-gold-300/30 pb-1">
-                  <span className="font-serif text-xl font-bold text-crimson-950">
-                    {selectedMasterpiece.title}
-                  </span>
-                  <span className="font-mono text-[9px] text-gold-700 font-bold uppercase">
-                    CREATION DATE: {selectedMasterpiece.year}
-                  </span>
-                </div>
-                <p className="text-xs md:text-sm text-amber-950/85 leading-relaxed text-justify">
-                  {selectedMasterpiece.description}
-                </p>
+        {/* Right: Rich Informational Details Card */}
+        <div className="lg:col-span-8" id="polymath-details-display">
+          <div
+            className="parchment-card p-6 md:p-8 rounded-sm border-2 border-double border-gold-500 relative overflow-hidden flex flex-col justify-between min-h-[380px]"
+            id="role-parchment"
+          >
+            <div className="absolute inset-2 border border-dashed border-gold-600/15 rounded-xs pointer-events-none" />
+
+            {/* Title / Subtitle block */}
+            <div
+              className="space-y-1.5 border-b border-gold-300/30 pb-4 mb-4"
+              id="role-header"
+            >
+              <span className="font-mono text-[9px] text-crimson-800 bg-crimson-50 px-2.5 py-0.5 border border-crimson-200 rounded-sm inline-block uppercase font-bold">
+                GENIUS PROFILE
+              </span>
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-crimson-950 leading-tight">
+                {polymathData[activeRole].title}
+              </h2>
+              <p className="font-serif italic text-xs text-gold-800">
+                {polymathData[activeRole].tagline}
+              </p>
+            </div>
+
+            {/* Core text description */}
+            <div className="space-y-4" id="role-body">
+              <p className="text-sm md:text-base text-amber-950/90 leading-relaxed text-justify font-serif italic">
+                "{polymathData[activeRole].mainText}"
+              </p>
+
+              {/* Sub-roles details list */}
+              <div
+                className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4"
+                id="role-highlights"
+              >
+                {polymathData[activeRole].subRoles.map((sub, index) => (
+                  <div
+                    key={index}
+                    className="p-4 bg-gold-50/50 border border-gold-300/25 rounded-xs space-y-2 flex flex-col justify-between"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="p-1 rounded bg-crimson-50">
+                        {sub.icon}
+                      </span>
+                      <h4 className="font-serif font-bold text-sm text-crimson-950">
+                        {sub.label}
+                      </h4>
+                    </div>
+                    <p className="text-xs md:text-sm text-amber-950/80 leading-relaxed text-justify">
+                      {sub.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
+            </div>
+
+            {/* Footer watermark/quote reference */}
+            <div
+              className="mt-6 pt-3 border-t border-gold-300/20 flex justify-between items-center text-[10px] font-mono text-gold-800"
+              id="role-footer"
+            >
+              <span>DR. JOSÉ RIZAL</span>
+              <span>DAPITAN ARCHIVE 1892 – 1896</span>
             </div>
           </div>
         </div>
