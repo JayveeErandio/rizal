@@ -6,8 +6,7 @@
 export enum ActivePage {
   HOME = "home",
   CENTURY_CONTEXT = "century_context",
-  FAMILY = "family",
-  CHILDHOOD = "childhood",
+  EARLY_LIFE = "early_life",
   EDUCATION = "education",
   TRIPS = "trips",
   OTHER_SIDE = "other_side",
@@ -32,7 +31,6 @@ export interface FamilyMember {
 
 export interface Masterpiece {
   title: string;
-
   category: "Music" | "Science" | "Art" | "Education";
   year: string;
   description: string;

@@ -22,21 +22,28 @@ export default function Navigation({
   const navItems = [
     { id: ActivePage.HOME, label: "Home" },
     { id: ActivePage.CENTURY_CONTEXT, label: "Context & Law" },
-    { id: ActivePage.FAMILY, label: "Family" },
-    { id: ActivePage.CHILDHOOD, label: "Childhood" },
+    { id: ActivePage.EARLY_LIFE, label: "Early Life" },
     { id: ActivePage.EDUCATION, label: "Education" },
     { id: ActivePage.TRIPS, label: "Trips Abroad" },
     { id: ActivePage.OTHER_SIDE, label: "Polymath" },
-    { id: ActivePage.WOMEN, label: "Women" },
+    { id: ActivePage.WOMEN, label: "Muses" },
     { id: ActivePage.WRITINGS_LEGACY, label: "Writings & Legacy" },
     { id: ActivePage.QUIZ, label: "Scholar's Exam" },
   ];
 
   return (
     <nav
-      className="relative bg-[#faf6ee] border-b border-gold-300/40 shadow-sm z-30 font-sans"
+      className="relative bg-[#faf6ee] border-b border-gold-300/40 shadow-sm z-30 font-sans sticky top-0"
       id="main-navigation-container"
     >
+      {/* Upper Crest Ribbon - Harvard/Oxford feeling */}
+      <div
+        className="bg-[#FAF6EE] text-crimson-700 font-bold py-1 px-4 text-[9px] font-mono tracking-[0.25em] text-center uppercase"
+        id="crest-ribbon"
+      >
+        * FORTITUDE • EXCELLENCE • UPRIGHTNESS *
+      </div>
+
       <div
         className="bg-crimson-950 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         id="navigation-inner-wrapper"
@@ -51,7 +58,7 @@ export default function Navigation({
               onNavigate(ActivePage.HOME);
               setMobileMenuOpen(false);
             }}
-            className="flex items-center cursor-pointer select-none group"
+            className="flex items-center gap-3 cursor-pointer select-none group"
             id="nav-logo-group"
           >
             <img src={logo} width={50} />
