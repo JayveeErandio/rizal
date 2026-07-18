@@ -41,9 +41,29 @@ export default function Navigation({
       >
         * FORTITUDE • EXCELLENCE • UPRIGHTNESS *
       </div>
-
+      {/* Decorative Ribbon Alignment Wrapper (Hangs from behind the main nav bar) */}
       <div
-        className="bg-crimson-950 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-0 z-10 pointer-events-none"
+        id="ribbon-alignment-wrapper"
+      >
+        <div
+          className="hidden md:flex absolute top-18 left-4 sm:left-6 lg:left-8 w-10 md:w-11 h-10 md:h-12 bg-crimson-900 border-x border-b border-gold-400/70 flex-col items-center justify-center text-gold-200 shadow-xl pointer-events-auto animate-fade-in"
+          style={{
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 50% 82%, 0% 100%)",
+          }}
+          id="academic-university-ribbon"
+        >
+          {/* Double-line inside border ornament */}
+          <div className="absolute inset-x-0.5 inset-y-0.5 bottom-3 border-x border-dashed border-gold-400/20 pointer-events-none" />
+
+          {/* Simple minimalist gold star emblem */}
+          <span className="text-[10px] md:text-sm text-gold-300/80 select-none pb-1 font-serif">
+            ★
+          </span>
+        </div>
+      </div>
+      <div
+        className="bg-crimson-950 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20"
         id="navigation-inner-wrapper"
       >
         <div
@@ -81,7 +101,7 @@ export default function Navigation({
                 <button
                   key={item.id}
                   onClick={() => onNavigate(item.id)}
-                  className={`px-3 py-1.5 rounded-xs font-display font-bold text-[10px] tracking-wider uppercase transition-all duration-200  ${isActive ? "text-gold-100 bg-crimson-850 border border-gold-500/35 shadow-inner scale-102" : "cursor-pointer text-gold-200 hover:bg-gold-200 hover:text-crimson-900"}`}
+                  className={`px-3 py-1.5 rounded-xs font-display font-bold text-[10px] tracking-wider uppercase transition-all duration-200 cursor-pointer ${isActive ? "text-gold-100 bg-crimson-850 border border-gold-500/35 shadow-inner scale-102" : "text-gold-200 hover:bg-gold-100/50 hover:text-crimson-800"}`}
                   id={`nav-item-${item.id}`}
                 >
                   {item.label}
@@ -152,7 +172,7 @@ export default function Navigation({
                   onNavigate(item.id);
                   setMobileMenuOpen(false);
                 }}
-                className={`w-full text-left px-4 py-2.5 rounded-sm font-serif font-bold text-xs tracking-wide border transition-all ${isActive ? "bg-crimson-850 text-crimson-500 border-gold-400" : "cursor-pointer bg-faf6ee text-crimson-950 border-gold-200/20 hover:bg-gold-100"}`}
+                className={`w-full text-left px-4 py-2.5 rounded-sm font-serif font-bold text-xs tracking-wide border transition-all ${isActive ? "bg-crimson-850 text-crimson-500 border-gold-400" : "bg-faf6ee text-crimson-950 border-gold-200/20 hover:bg-gold-100/30"}`}
                 id={`mobile-nav-item-${item.id}`}
               >
                 {item.label}
