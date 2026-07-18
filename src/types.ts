@@ -13,6 +13,7 @@ export enum ActivePage {
   WOMEN = "women",
   WRITINGS_LEGACY = "writings_legacy",
   QUIZ = "quiz",
+  CREDITS = "credits",
 }
 
 export interface TimelineEvent {

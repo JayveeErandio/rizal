@@ -25,6 +25,7 @@ import OtherSideView from "./components/views/OtherSideView";
 import WomenView from "./components/views/WomenView";
 import WritingsView from "./components/views/WritingsView";
 import QuizView from "./components/views/QuizView";
+import CreditsView from "./components/views/CreditsView";
 
 const pageToPath: Record<ActivePage, string> = {
   [ActivePage.HOME]: "/",
@@ -36,6 +37,7 @@ const pageToPath: Record<ActivePage, string> = {
   [ActivePage.WOMEN]: "/women",
   [ActivePage.WRITINGS_LEGACY]: "/writings",
   [ActivePage.QUIZ]: "/quiz",
+  [ActivePage.CREDITS]: "/credits",
 };
 
 const pathToPage: Record<string, ActivePage> = {
@@ -48,6 +50,7 @@ const pathToPage: Record<string, ActivePage> = {
   "/women": ActivePage.WOMEN,
   "/writings": ActivePage.WRITINGS_LEGACY,
   "/quiz": ActivePage.QUIZ,
+  "/credits": ActivePage.CREDITS,
 };
 
 // Digital hand-drawn vector signature of José Rizal
@@ -112,6 +115,8 @@ export default function App() {
         return <WritingsView />;
       case ActivePage.QUIZ:
         return <QuizView />;
+      case ActivePage.CREDITS:
+        return <CreditsView />;
       default:
         return (
           <HomeView onNavigate={(p) => handleNavigation(p as ActivePage)} />

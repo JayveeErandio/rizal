@@ -26,6 +26,7 @@ export default function Navigation({
     { id: ActivePage.WOMEN, label: "Muses" },
     { id: ActivePage.WRITINGS_LEGACY, label: "Writings & Legacy" },
     { id: ActivePage.QUIZ, label: "Scholar's Exam" },
+    { id: ActivePage.CREDITS, label: "Credits" },
   ];
 
   return (
@@ -80,7 +81,7 @@ export default function Navigation({
                 <button
                   key={item.id}
                   onClick={() => onNavigate(item.id)}
-                  className={`px-3 py-1.5 rounded-xs font-display font-bold text-[10px] tracking-wider uppercase transition-all duration-200 cursor-pointer ${isActive ? "text-gold-100 bg-crimson-850 border border-gold-500/35 shadow-inner scale-102" : "text-gold-200 hover:bg-gold-100/50 hover:text-crimson-800"}`}
+                  className={`px-3 py-1.5 rounded-xs font-display font-bold text-[10px] tracking-wider uppercase transition-all duration-200  ${isActive ? "text-gold-100 bg-crimson-850 border border-gold-500/35 shadow-inner scale-102" : "cursor-pointer text-gold-200 hover:bg-gold-200 hover:text-crimson-900"}`}
                   id={`nav-item-${item.id}`}
                 >
                   {item.label}
@@ -151,7 +152,7 @@ export default function Navigation({
                   onNavigate(item.id);
                   setMobileMenuOpen(false);
                 }}
-                className={`w-full text-left px-4 py-2.5 rounded-sm font-serif font-bold text-xs tracking-wide border transition-all ${isActive ? "bg-crimson-850 text-crimson-500 border-gold-400" : "bg-faf6ee text-crimson-950 border-gold-200/20 hover:bg-gold-100/30"}`}
+                className={`w-full text-left px-4 py-2.5 rounded-sm font-serif font-bold text-xs tracking-wide border transition-all ${isActive ? "bg-crimson-850 text-crimson-500 border-gold-400" : "cursor-pointer bg-faf6ee text-crimson-950 border-gold-200/20 hover:bg-gold-100"}`}
                 id={`mobile-nav-item-${item.id}`}
               >
                 {item.label}
